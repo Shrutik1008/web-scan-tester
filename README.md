@@ -13,11 +13,13 @@ The goal of WebScan Pro is to perform automated penetration testing on web appli
 - Session issues
 
 ## 🖼️ Screenshots
-**Dashboard Screenshot 1**  
-[Dashboard of Severity and its type ](img1)
 
-**Dashboard Screenshot 2**  
-[Detailed Vulnerability List](img2)
+### **Dashboard of Severity and Its Types**
+![Dashboard of Severity and its type](img1.png)
+
+### **Detailed Vulnerability List**
+![Detailed Vulnerability List](img2.png)
+
 
 ## 🔄 Project Workflow
 
