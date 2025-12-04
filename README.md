@@ -72,5 +72,3 @@ The goal of WebScan Pro is to perform automated penetration testing on web appli
 
 ## 📘 Tools Used
 - DVWA
-- OWASP Juice Shop
-- bWAPP
