@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WebScanPro Security Report</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1, h2, h3 { color: #222; }
+        .summary-box {
+            border: 1px solid #ccc; padding: 10px; margin-bottom: 20px;
+            border-radius: 8px; background: #f9f9f9;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 6px 8px;
+            font-size: 13px;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        .sev-High { color: #b30000; font-weight: bold; }
+        .sev-Medium { color: #cc7a00; font-weight: bold; }
+        .sev-Low { color: #006600; font-weight: bold; }
+        .tiny { font-size: 11px; color: #555; }
+        .section { margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <h1>WebScanPro - Security Report</h1>
+    <div class="summary-box">
+        <p><strong>Total vulnerabilities:</strong> 17</p>
+        <p><strong>By Severity:</strong> {'Medium': 7, 'High': 9, 'Low': 1}</p>
+        <p><strong>By Type:</strong> {'Authentication / Session': 1, 'Weak / Default Credentials': 4, 'Brute-force Vulnerability': 5, 'Access Control / IDOR': 7}</p>
+    </div>
+
+    <div class="section">
+        <h2>Visual Summary</h2>
+        <div style="display:flex; gap:40px; flex-wrap:wrap;">
+            <div>
+                <h3>Vulnerabilities by Severity</h3>
+                <canvas id="severityChart" width="350" height="250"></canvas>
+            </div>
+            <div>
+                <h3>Vulnerabilities by Type</h3>
+                <canvas id="typeChart" width="350" height="250"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Detailed Vulnerability List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Vulnerability Type</th>
+                    <th>Affected Endpoint</th>
+                    <th>Severity</th>
+                    <th>Evidence / Notes</th>
+                    <th>Suggested Mitigation</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+                <tr>
+                    <td>1</td>
+                    <td>Authentication / Session</td>
+                    <td>http://localhost:8080/login.php</td>
+                    <td class="sev-Medium">Medium</td>
+                    <td class="tiny">Test=cookie_analysis, Evidence=missing_HttpOnly;missing_Secure;missing_SameSite;low_entropy_session_id, Notes=, User=, Cookie=PHPSESSID (path=/, security=low)</td>
+                    <td class="tiny">Harden authentication with multi-factor where possible, ensure secure cookie attributes, and protect session IDs from exposure in URLs, logs, and client-side scripts.</td>
+                </tr>
+        
+                <tr>
+                    <td>2</td>
+                    <td>Weak / Default Credentials</td>
+                    <td>http://localhost:8080/login.php</td>
+                    <td class="sev-High">High</td>
+                    <td class="tiny">Test=weak_credential, Evidence=login_success, Notes=Login appeared successful, User=admin, Cookie= ()</td>
+                    <td class="tiny">Force strong password policy and prevent use of known weak/default passwords. Disable default accounts or require password change on first login. Implement account lockout or CAPTCHA after several failed attempts.</td>
+                </tr>
+        
+                <tr>
+                    <td>3</td>
+                    <td>Weak / Default Credentials</td>
+                    <td>http://localhost:8080/login.php</td>
+                    <td class="sev-High">High</td>
+                    <td class="tiny">Test=weak_credential, Evidence=login_success, Notes=Login appeared successful, User=admin, Cookie= ()</td>
+                    <td class="tiny">Force strong password policy and prevent use of known weak/default passwords. Disable default accounts or require password change on first login. Implement account lockout or CAPTCHA after several failed attempts.</td>
+                </tr>
+        
+                <tr>
+                    <td>4</td>
+                    <td>Weak / Default Credentials</td>
+                    <td>http://localhost:8080/login.php</td>
+                    <td class="sev-High">High</td>
+                    <td class="tiny">Test=weak_credential, Evidence=login_success, Notes=Login appeared successful, User=root, Cookie= ()</td>
+                    <td class="tiny">Force strong password policy and prevent use of known weak/default passwords. Disable default accounts or require password change on first login. Implement account lockout or CAPTCHA after several failed attempts.</td>
+                </tr>
+        
+                <tr>
+                    <td>5</td>
+                    <td>Weak / Default Credentials</td>
+                    <td>http://localhost:8080/login.php</td>
+                    <td class="sev-High">High</td>
+                    <td class="tiny">Test=weak_credential, Evidence=login_success, Notes=Login appeared successful, User=user, Cookie= ()</td>
+                    <td class="tiny">Force strong password policy and prevent use of known weak/default passwords. Disable default accounts or require password change on first login. Implement account lockout or CAPTCHA after several failed attempts.</td>
+                </tr>
+        
+                <tr>
+                    <td>6</td>
+                    <td>Brute-force Vulnerability</td>
+                    <td>http://localhost:8080/login.php</td>
+                    <td class="sev-High">High</td>
+                    <td class="tiny">Test=bruteforce, Evidence=login_success, Notes=Bruteforce success, User=admin, Cookie= ()</td>
+                    <td class="tiny">Add rate limiting, account lockouts, and CAPTCHAs for repeated login attempts. Log and monitor failed login patterns for potential attacks.</td>
+                </tr>
+        
+                <tr>
+                    <td>7</td>
+                    <td>Brute-force Vulnerability</td>
+                    <td>http://localhost:8080/login.php</td>
+                    <td class="sev-High">High</td>
+                    <td class="tiny">Test=bruteforce, Evidence=login_success, Notes=Bruteforce success, User=admin, Cookie= ()</td>
+                    <td class="tiny">Add rate limiting, account lockouts, and CAPTCHAs for repeated login attempts. Log and monitor failed login patterns for potential attacks.</td>
+                </tr>
+        
+                <tr>
+                    <td>8</td>
+                    <td>Brute-force Vulnerability</td>
+                    <td>http://localhost:8080/login.php</td>
+                    <td class="sev-High">High</td>
+                    <td class="tiny">Test=bruteforce, Evidence=login_success, Notes=Bruteforce success, User=admin, Cookie= ()</td>
+                    <td class="tiny">Add rate limiting, account lockouts, and CAPTCHAs for repeated login attempts. Log and monitor failed login patterns for potential attacks.</td>
+                </tr>
+        
+                <tr>
+                    <td>9</td>
+                    <td>Brute-force Vulnerability</td>
+                    <td>http://localhost:8080/login.php</td>
+                    <td class="sev-High">High</td>
+                    <td class="tiny">Test=bruteforce, Evidence=login_success, Notes=Bruteforce success, User=admin, Cookie= ()</td>
+                    <td class="tiny">Add rate limiting, account lockouts, and CAPTCHAs for repeated login attempts. Log and monitor failed login patterns for potential attacks.</td>
+                </tr>
+        
+                <tr>
+                    <td>10</td>
+                    <td>Brute-force Vulnerability</td>
+                    <td>http://localhost:8080/login.php</td>
+                    <td class="sev-High">High</td>
+                    <td class="tiny">Test=bruteforce, Evidence=login_success, Notes=Bruteforce success, User=admin, Cookie= ()</td>
+                    <td class="tiny">Add rate limiting, account lockouts, and CAPTCHAs for repeated login attempts. Log and monitor failed login patterns for potential attacks.</td>
+                </tr>
+        
+                <tr>
+                    <td>11</td>
+                    <td>Access Control / IDOR</td>
+                    <td>http://localhost:8080/vulnerabilities/sqli/?id=2&Submit=Submit</td>
+                    <td class="sev-Medium">Medium</td>
+                    <td class="tiny">Param=id, Original=1, Tested=2, Evidence=no_change_or_denied, Notes=ID tampering attempt; response similar or not authorized</td>
+                    <td class="tiny">Enforce object-level authorization checks on the server for every request. Never rely solely on IDs from the client; verify that the current user is allowed to access the requested resource.</td>
+                </tr>
+        
+                <tr>
+                    <td>12</td>
+                    <td>Access Control / IDOR</td>
+                    <td>http://localhost:8080/vulnerabilities/sqli/?id=3&Submit=Submit</td>
+                    <td class="sev-Medium">Medium</td>
+                    <td class="tiny">Param=id, Original=1, Tested=3, Evidence=no_change_or_denied, Notes=ID tampering attempt; response similar or not authorized</td>
+                    <td class="tiny">Enforce object-level authorization checks on the server for every request. Never rely solely on IDs from the client; verify that the current user is allowed to access the requested resource.</td>
+                </tr>
+        
+                <tr>
+                    <td>13</td>
+                    <td>Access Control / IDOR</td>
+                    <td>http://localhost:8080/vulnerabilities/sqli/?id=4&Submit=Submit</td>
+                    <td class="sev-Medium">Medium</td>
+                    <td class="tiny">Param=id, Original=1, Tested=4, Evidence=no_change_or_denied, Notes=ID tampering attempt; response similar or not authorized</td>
+                    <td class="tiny">Enforce object-level authorization checks on the server for every request. Never rely solely on IDs from the client; verify that the current user is allowed to access the requested resource.</td>
+                </tr>
+        
+                <tr>
+                    <td>14</td>
+                    <td>Access Control / IDOR</td>
+                    <td>http://localhost:8080/vulnerabilities/sqli_blind/?id=2&Submit=Submit</td>
+                    <td class="sev-Medium">Medium</td>
+                    <td class="tiny">Param=id, Original=1, Tested=2, Evidence=no_change_or_denied, Notes=ID tampering attempt; response similar or not authorized</td>
+                    <td class="tiny">Enforce object-level authorization checks on the server for every request. Never rely solely on IDs from the client; verify that the current user is allowed to access the requested resource.</td>
+                </tr>
+        
+                <tr>
+                    <td>15</td>
+                    <td>Access Control / IDOR</td>
+                    <td>http://localhost:8080/vulnerabilities/sqli_blind/?id=3&Submit=Submit</td>
+                    <td class="sev-Medium">Medium</td>
+                    <td class="tiny">Param=id, Original=1, Tested=3, Evidence=no_change_or_denied, Notes=ID tampering attempt; response similar or not authorized</td>
+                    <td class="tiny">Enforce object-level authorization checks on the server for every request. Never rely solely on IDs from the client; verify that the current user is allowed to access the requested resource.</td>
+                </tr>
+        
+                <tr>
+                    <td>16</td>
+                    <td>Access Control / IDOR</td>
+                    <td>http://localhost:8080/vulnerabilities/sqli_blind/?id=4&Submit=Submit</td>
+                    <td class="sev-Medium">Medium</td>
+                    <td class="tiny">Param=id, Original=1, Tested=4, Evidence=no_change_or_denied, Notes=ID tampering attempt; response similar or not authorized</td>
+                    <td class="tiny">Enforce object-level authorization checks on the server for every request. Never rely solely on IDs from the client; verify that the current user is allowed to access the requested resource.</td>
+                </tr>
+        
+                <tr>
+                    <td>17</td>
+                    <td>Access Control / IDOR</td>
+                    <td>http://localhost:8080/vulnerabilities/weak_id/</td>
+                    <td class="sev-Low">Low</td>
+                    <td class="tiny">Param=(none), Original=, Tested=, Evidence=no_id_param, Notes=Endpoint scanned but no explicit 'id' param was present</td>
+                    <td class="tiny">Enforce object-level authorization checks on the server for every request. Never rely solely on IDs from the client; verify that the current user is allowed to access the requested resource.</td>
+                </tr>
+        
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const sevCtx = document.getElementById('severityChart').getContext('2d');
+        new Chart(sevCtx, {
+            type: 'bar',
+            data: {
+                labels: ["Medium", "High", "Low"],
+                datasets: [{
+                    label: 'Count by Severity',
+                    data: [7, 9, 1],
+                }]
+            }
+        });
+
+        const typeCtx = document.getElementById('typeChart').getContext('2d');
+        new Chart(typeCtx, {
+            type: 'bar',
+            data: {
+                labels: ["Authentication / Session", "Weak / Default Credentials", "Brute-force Vulnerability", "Access Control / IDOR"],
+                datasets: [{
+                    label: 'Count by Type',
+                    data: [1, 4, 5, 7],
+                }]
+            }
+        });
+    </script>
+</body>
+</html>

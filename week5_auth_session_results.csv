@@ -1,0 +1,15 @@
+test_type,target,endpoint,username,password,status_code,evidence,notes,cookie_name,cookie_value,cookie_flags
+cookie_analysis,http://localhost:8080/login.php,http://localhost:8080/login.php,,,200,missing_HttpOnly;missing_Secure;missing_SameSite;low_entropy_session_id,,PHPSESSID,f77lqg889t3lqbo6lr71abd3c1,"path=/, security=low"
+weak_credential,http://localhost:8080/login.php,http://localhost:8080/login.php,admin,password,200,login_success,Login appeared successful,,,
+weak_credential,http://localhost:8080/login.php,http://localhost:8080/login.php,admin,admin,200,login_success,Login appeared successful,,,
+weak_credential,http://localhost:8080/login.php,http://localhost:8080/login.php,root,root,200,login_success,Login appeared successful,,,
+weak_credential,http://localhost:8080/login.php,http://localhost:8080/login.php,user,user,200,login_success,Login appeared successful,,,
+bruteforce,http://localhost:8080/login.php,http://localhost:8080/login.php,admin,password,200,login_success,Bruteforce success,,,
+bruteforce,http://localhost:8080/login.php,http://localhost:8080/login.php,admin,123456,200,login_success,Bruteforce success,,,
+bruteforce,http://localhost:8080/login.php,http://localhost:8080/login.php,admin,admin,200,login_success,Bruteforce success,,,
+bruteforce,http://localhost:8080/login.php,http://localhost:8080/login.php,admin,dvwa,200,login_success,Bruteforce success,,,
+bruteforce,http://localhost:8080/login.php,http://localhost:8080/login.php,admin,password1,200,login_success,Bruteforce success,,,
+session_fixation,http://localhost:8080/login.php,http://localhost:8080/login.php,,,200,vulnerable,Server preserved supplied session cookie,PHPSESSID,fixed_9077,
+session_fixation,http://localhost:8080/login.php,http://localhost:8080/login.php,,,200,vulnerable,Server preserved supplied session cookie,session,fixed_9077,
+session_fixation,http://localhost:8080/login.php,http://localhost:8080/login.php,,,200,vulnerable,Server preserved supplied session cookie,SID,fixed_9077,
+session_hijack,http://localhost:8080/login.php,,,,,denied,Hijack failed,PHPSESSID;security,jkaj3d1ss8pv36ecfvb9b2esa6;low,

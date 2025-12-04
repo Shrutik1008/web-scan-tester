@@ -1,0 +1,8 @@
+test_type,tested_url,method,param_or_path,original_value,tested_value,status_code,evidence,notes
+horizontal_idor_attempt,http://localhost:8080/vulnerabilities/sqli/?id=2&Submit=Submit,GET,id,1,2,200,no_change_or_denied,ID tampering attempt; response similar or not authorized
+horizontal_idor_attempt,http://localhost:8080/vulnerabilities/sqli/?id=3&Submit=Submit,GET,id,1,3,200,no_change_or_denied,ID tampering attempt; response similar or not authorized
+horizontal_idor_attempt,http://localhost:8080/vulnerabilities/sqli/?id=4&Submit=Submit,GET,id,1,4,200,no_change_or_denied,ID tampering attempt; response similar or not authorized
+horizontal_idor_attempt,http://localhost:8080/vulnerabilities/sqli_blind/?id=2&Submit=Submit,GET,id,1,2,200,no_change_or_denied,ID tampering attempt; response similar or not authorized
+horizontal_idor_attempt,http://localhost:8080/vulnerabilities/sqli_blind/?id=3&Submit=Submit,GET,id,1,3,200,no_change_or_denied,ID tampering attempt; response similar or not authorized
+horizontal_idor_attempt,http://localhost:8080/vulnerabilities/sqli_blind/?id=4&Submit=Submit,GET,id,1,4,200,no_change_or_denied,ID tampering attempt; response similar or not authorized
+horizontal_info,http://localhost:8080/vulnerabilities/weak_id/,GET,(none),,,200,no_id_param,Endpoint scanned but no explicit 'id' param was present
